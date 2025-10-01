@@ -90,7 +90,10 @@ const OrderForm = () => {
           Total Price: {`$${totalCartPrice.toFixed(2)}`}
         </p>
         <button
-          onClick={() => navigate('/success')}
+          disabled={cartItems.length === 0}
+          onClick={() => (
+            navigate("/success")
+          )}
           className=" cursor-pointer text-[30px] px-[12px] py-[8px] bg-[#008751] hover:bg-[#008769] text-white rounded-[12px] font-medium"
         >
           Place Order
