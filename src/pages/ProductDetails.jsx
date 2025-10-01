@@ -1,5 +1,6 @@
 import { useParams } from "react-router-dom";
 import { products } from "../data/products";
+import { useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -8,9 +9,34 @@ const ProductDetails = () => {
     (product) => product.id === parseInt(id)
   );
 
+  const navigate = useNavigate();
+
+  const addToCart = () => {
+    // get the cart
+    const cart = localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+
+    const existingItemIndex = cart.findIndex(
+      (item) => item.id === productToRender.id
+    );
+    if (existingItemIndex !== -1) {
+      // 3a. If it exists, increase the quantity
+      cart[existingItemIndex].quantity =
+        (cart[existingItemIndex].quantity || 1) + 1;
+    } else {
+      // 3b. If it doesn’t exist, add it as a new product with quantity 1
+      cart.push({ ...productToRender, quantity: 1 });
+    }
+    // push the new product
+    // cart.push(productToRender);
+    // set the cart
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+
   return (
     <>
-      <div className="flex ">
+      <div className="flex px-[30px]">
         <img
           className="w-[650px] m-[10px] rounded-[8px]"
           src={productToRender.image}
@@ -28,9 +54,11 @@ const ProductDetails = () => {
           <div className="bg-[#008751] hover:bg-[#008769] mt-[15px] rounded-[8px] text-white flex justify-center cursor-pointer">
             <button
               className="w-full py-[10px] font-medium cursor-pointer"
-              onClick={() => navigate(`/products/${product.id}`)}
+              onClick={() => {
+                addToCart(), navigate("/order");
+              }}
             >
-              Buy Now
+              Add to cart
             </button>
           </div>
         </div>

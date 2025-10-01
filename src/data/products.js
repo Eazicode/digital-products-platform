@@ -4,7 +4,7 @@ export const products = [
     name: "E-book: Learn React Fast",
     description: "A beginner-friendly guide to mastering React in 30 days.",
     price: 15,
-    image: "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&h=600&fit=crop",
+    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
   },
   {
     id: 2,
