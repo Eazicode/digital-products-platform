@@ -28,7 +28,7 @@ const Home = () => {
           </button>
         </div>
 
-        <div className="flex justify-evenly mb-[60px]">
+        <div className="flex gap-[15px] justify-evenly mb-[60px] px-[10px]">
           <Card
             img="./cloud-lightning.svg"
             title="Instant Access"
@@ -52,8 +52,8 @@ const Home = () => {
         </div>
 
         <div className="grid gap-[25px] [grid-template-columns:repeat(auto-fill,minmax(300px,1fr))] px-[15px]">
-          {products.slice(0, 3).map((products) => (
-            <Product key={products.id} product={products} />
+          {products.slice(0, 4).map((product) => (
+            <Product key={product.id} product={product} />
           ))}
         </div>
 
@@ -62,7 +62,7 @@ const Home = () => {
             onClick={() => navigate("./products")}
             className="bg-[#008751] w-[200px] py-[12px] text-white rounded-[8px] font-medium cursor-pointer hover:bg-[#1eba7e]"
           >
-            View All products
+            View All products....
           </button>
         </div>
       </div>
