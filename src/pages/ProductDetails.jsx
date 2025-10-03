@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 const ProductDetails = () => {
   const { id } = useParams();
-  console.log(id);
   const productToRender = products.find(
     (product) => product.id === parseInt(id)
   );
@@ -21,16 +20,11 @@ const ProductDetails = () => {
       (item) => item.id === productToRender.id
     );
     if (existingItemIndex !== -1) {
-      // 3a. If it exists, increase the quantity
       cart[existingItemIndex].quantity =
         (cart[existingItemIndex].quantity || 1) + 1;
     } else {
-      // 3b. If it doesn’t exist, add it as a new product with quantity 1
       cart.push({ ...productToRender, quantity: 1 });
     }
-    // push the new product
-    // cart.push(productToRender);
-    // set the cart
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 

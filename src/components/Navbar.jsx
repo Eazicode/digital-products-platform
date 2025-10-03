@@ -4,7 +4,9 @@ const Navbar = () => {
   return (
     <>
       <div className="flex justify-between p-5 bg-[#008751]">
-        <Link to='/' className="text-[20px] font-bold text-white">Digital Platform</Link>
+        <Link to="/" className="text-[20px] font-bold text-white">
+          Digital Platform
+        </Link>
 
         <ul className="flex gap-5 text-white">
           <li>
@@ -15,9 +17,9 @@ const Navbar = () => {
             <Link to="/products">Products</Link>
           </li>
 
-          {/* <li>
-            <Link to='/order'>Check Cart </Link>
-          </li> */}
+          <li>
+            <Link to="/order">Check Cart </Link>
+          </li>
         </ul>
       </div>
     </>

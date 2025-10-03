@@ -5,17 +5,15 @@ const Success = () => {
   const [cartItems, setCartItems] = useState([]);
   const navigate = useNavigate();
 
-  const loadCartItems = () => {
-    const cartProducts = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-
-    setCartItems(cartProducts);
-    console.log(cartProducts);
-  };
-
   useEffect(() => {
-    loadCartItems();
+    const storedCart = localStorage.getItem("cart");
+    if (storedCart) {
+      setCartItems(JSON.parse(storedCart));
+    }
+
+    return () => {
+      localStorage.removeItem("cart");
+    };
   }, []);
 
   const totalCartPrice = cartItems.reduce(
@@ -52,14 +50,7 @@ const Success = () => {
       </p>
 
       <div className="text-[20px] cursor-pointer mx-auto bg-[#008751] hover:bg-[#008769] w-[200px] text-white mb-[30px] py-[8px] rounded-[4px]">
-        <button
-          className="w-full cursor-pointer"
-          onClick={() => (
-            setCartItems([]),
-            localStorage.setItem("cart", JSON.stringify([])),
-            navigate("/")
-          )}
-        >
+        <button className="w-full cursor-pointer" onClick={() => navigate("/")}>
           Return to Hompage
         </button>
       </div>

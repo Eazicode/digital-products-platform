@@ -12,7 +12,6 @@ const OrderForm = () => {
       : [];
 
     setCartItems(cartProducts);
-    console.log(cartProducts);
   };
 
   useEffect(() => {
