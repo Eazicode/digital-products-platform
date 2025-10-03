@@ -71,7 +71,7 @@ const OrderForm = () => {
                       <div>
                         <button
                           onClick={() => removeFromCart(item.id)}
-                          className="bg-red-700 text-white py-[5px] px-[12px] rounded-[8px] cursor-pointer"
+                          className="bg-red-700 hover:bg-red-400 text-white py-[5px] px-[12px] rounded-[8px] cursor-pointer"
                         >
                           Remove Item
                         </button>
@@ -92,7 +92,11 @@ const OrderForm = () => {
           <button
             disabled={cartItems.length === 0}
             onClick={() => navigate("/success")}
-            className={`cursor-pointer text-[30px] px-[12px] py-[8px] bg-[#008751] hover:bg-[#008769] text-white rounded-[12px] font-medium`}
+            className={`${
+              cartItems.length === 0
+                ? "bg-[#b6d8be]"
+                : "bg-[#008751] hover:bg-[#1eba7e] cursor-pointer"
+            } text-[30px] px-[12px] py-[8px]  text-white rounded-[12px] font-medium`}
           >
             Place Order
           </button>

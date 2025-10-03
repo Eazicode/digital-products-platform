@@ -57,7 +57,7 @@ const Success = () => {
         <div
           className={`${
             cartItems.length > 0 ? "mb-[180px]" : "mb-0"
-          } text-[20px] cursor-pointer mx-auto bg-[#008751] hover:bg-[#008769] w-[200px] text-white py-[8px] rounded-[4px]`}
+          } text-[20px] cursor-pointer mx-auto bg-[#008751] hover:bg-[#1eba7e] w-[200px] text-white py-[8px] rounded-[4px]`}
         >
           <button
             className="w-full cursor-pointer"

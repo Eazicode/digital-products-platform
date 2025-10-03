@@ -22,7 +22,7 @@ const Home = () => {
         <div className="flex justify-center cursor-pointer mb-[80px]">
           <button
             onClick={() => navigate("./products")}
-            className="w-[200px] py-[12px] bg-[#008751] hover:bg-[#008779] rounded-[8px] text-white cursor-pointer"
+            className="w-[200px] py-[12px] bg-[#008751] hover:bg-[#1eba7e] rounded-[8px] text-white cursor-pointer"
           >
             Browse Products
           </button>
@@ -32,17 +32,17 @@ const Home = () => {
           <Card
             img="./cloud-lightning.svg"
             title="Instant Access"
-            desc="Download your products immediately after purchase"
+            desc={`Download your products immediately after\npurchase`}
           />
           <Card
             img="./shield.svg"
             title="Secure Payment"
-            desc="Your transactions are protected and encrypted"
+            desc={`Your transactions are protected and\nencrypted`}
           />
           <Card
             img="./star.svg"
             title="Premium Quality"
-            desc="Carefully curated products from top creators"
+            desc={`Carefully curated products from top\ncreators`}
           />
         </div>
 
@@ -60,7 +60,7 @@ const Home = () => {
         <div className="flex justify-center my-[40px] cursor-pointer">
           <button
             onClick={() => navigate("./products")}
-            className="bg-[#008751] w-[200px] py-[12px] text-white rounded-[8px] font-medium cursor-pointer hover:bg-[#008769]"
+            className="bg-[#008751] w-[200px] py-[12px] text-white rounded-[8px] font-medium cursor-pointer hover:bg-[#1eba7e]"
           >
             View All products
           </button>

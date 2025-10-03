@@ -19,7 +19,7 @@ const Product = ({ product }) => {
           2
         )}`}</p>
 
-        <div className="bg-[#008751] hover:bg-[#008769] rounded-[8px] text-white flex justify-center cursor-pointer">
+        <div className="bg-[#008751] hover:bg-[#1eba7e] rounded-[8px] text-white flex justify-center cursor-pointer">
           <button
             className="w-full py-[10px] font-medium cursor-pointer"
             onClick={() => navigate(`/products/${product.id}`)}

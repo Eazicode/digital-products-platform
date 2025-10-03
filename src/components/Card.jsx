@@ -8,7 +8,7 @@ const Card = ({ img, title, desc }) => {
 
         <h1 className="text-[20px] font-medium">{title}</h1>
 
-        <p>{desc}</p>
+        <p className="whitespace-pre-line">{desc}</p>
       </div>
     </>
   );

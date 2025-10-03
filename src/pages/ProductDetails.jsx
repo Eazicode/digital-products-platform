@@ -45,7 +45,7 @@ const ProductDetails = () => {
             2
           )}`}</p>
 
-          <div className="bg-[#008751] hover:bg-[#008769] mt-[15px] rounded-[8px] text-white flex justify-center cursor-pointer">
+          <div className="bg-[#008751] hover:bg-[#1eba7e] mt-[15px] rounded-[8px] text-white flex justify-center cursor-pointer">
             <button
               className="w-full py-[10px] font-medium cursor-pointer"
               onClick={() => {
