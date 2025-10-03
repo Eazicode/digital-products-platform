@@ -90,10 +90,10 @@ const OrderForm = () => {
         </p>
         <button
           disabled={cartItems.length === 0}
-          onClick={() => (
-            navigate("/success")
-          )}
-          className=" cursor-pointer text-[30px] px-[12px] py-[8px] bg-[#008751] hover:bg-[#008769] text-white rounded-[12px] font-medium"
+          onClick={() => navigate("/success")}
+          className={`${
+            cartItems.length > 0 ? "mb-[150px]" : "mb-0"
+          }  cursor-pointer text-[30px] px-[12px] py-[8px] bg-[#008751] hover:bg-[#008769] text-white rounded-[12px] font-medium`}
         >
           Place Order
         </button>

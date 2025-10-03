@@ -45,11 +45,11 @@ const Success = () => {
           <div className=" w-full border-[0.1px] border-gray-200"></div>
         </div>
       ))}
-      <p className="text-right me-5 text-[30px] font-bold">
+      <p className='text-right me-5 text-[30px] font-bold'>
         Total Price: {`$${totalCartPrice.toFixed(2)}`}
       </p>
 
-      <div className="text-[20px] cursor-pointer mx-auto bg-[#008751] hover:bg-[#008769] w-[200px] text-white mb-[30px] py-[8px] rounded-[4px]">
+      <div className={`${cartItems.length > 0 ? 'mb-[180px]' : 'mb-0'} text-[20px] cursor-pointer mx-auto bg-[#008751] hover:bg-[#008769] w-[200px] text-white py-[8px] rounded-[4px]`}>
         <button className="w-full cursor-pointer" onClick={() => navigate("/")}>
           Return to Hompage
         </button>
