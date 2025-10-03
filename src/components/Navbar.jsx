@@ -9,15 +9,15 @@ const Navbar = () => {
         </Link>
 
         <ul className="flex gap-5 text-white">
-          <li>
+          <li className="hover:text-gray-400">
             <Link to="/">Home</Link>
           </li>
 
-          <li>
+          <li className="hover:text-gray-400">
             <Link to="/products">Products</Link>
           </li>
 
-          <li>
+          <li className="hover:text-gray-400">
             <Link to="/order">Check Cart </Link>
           </li>
         </ul>

@@ -30,7 +30,7 @@ const ProductDetails = () => {
 
   return (
     <>
-      <div className="flex px-[30px]">
+      <div className="flex px-[30px] min-h-screen">
         <img
           className="w-[650px] m-[10px] rounded-[8px]"
           src={productToRender.image}

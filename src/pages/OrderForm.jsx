@@ -39,64 +39,64 @@ const OrderForm = () => {
   );
   return (
     <>
-      {cartItems.length === 0 ? (
-        <p className="text-[35px] flex justify-center mt-[100px]">
-          {`Your cart is empty (${totalCartItems})`}.
-        </p>
-      ) : (
-        <div className="mt-[50px]">
-          <p className="text-[25px] flex justify-center mt-[30px]">
+      <div className="min-h-screen">
+        {cartItems.length === 0 ? (
+          <p className="text-[35px] flex justify-center mt-[100px]">
             {`Your cart is empty (${totalCartItems})`}.
           </p>
+        ) : (
+          <div className="mt-[50px]">
+            <p className="text-[25px] flex justify-center mt-[30px]">
+              {`Your cart is empty (${totalCartItems})`}.
+            </p>
 
-          {cartItems.map((item, i) => (
-            <div key={i} className="mb-[10px]">
-              <div className="my-[10px] px-[30px] flex gap-10">
-                <img
-                  className="w-[130px] rounded-[8px]"
-                  src={item.image}
-                  alt=""
-                />
+            {cartItems.map((item, i) => (
+              <div key={i} className="mb-[10px]">
+                <div className="my-[10px] px-[30px] flex gap-10">
+                  <img
+                    className="w-[130px] rounded-[8px]"
+                    src={item.image}
+                    alt=""
+                  />
 
-                <div className="mt-[20px]">
-                  <p className="text-[17px] font-medium">{item.name}</p>
-                  <p>quantity: {item.quantity}</p>
+                  <div className="mt-[20px]">
+                    <p className="text-[17px] font-medium">{item.name}</p>
+                    <p>quantity: {item.quantity}</p>
 
-                  <div className="flex items-center gap-5">
-                    <p className="text-[14px] font-medium ">{`$${
-                      item.quantity * item.price
-                    }.00`}</p>
+                    <div className="flex items-center gap-5">
+                      <p className="text-[14px] font-medium ">{`$${
+                        item.quantity * item.price
+                      }.00`}</p>
 
-                    <div>
-                      <button
-                        onClick={() => removeFromCart(item.id)}
-                        className="bg-red-700 text-white py-[5px] px-[12px] rounded-[8px] cursor-pointer"
-                      >
-                        Remove Item
-                      </button>
+                      <div>
+                        <button
+                          onClick={() => removeFromCart(item.id)}
+                          className="bg-red-700 text-white py-[5px] px-[12px] rounded-[8px] cursor-pointer"
+                        >
+                          Remove Item
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div className="w-full border-[0.1px] border-gray-200"></div>
               </div>
-              <div className="w-full border-[0.1px] border-gray-200"></div>
-            </div>
-          ))}
-        </div>
-      )}
+            ))}
+          </div>
+        )}
 
-      <div className="text-right me-[40px] mb-[20px]">
-        <p className="text-[30px] font-bold">
-          Total Price: {`$${totalCartPrice.toFixed(2)}`}
-        </p>
-        <button
-          disabled={cartItems.length === 0}
-          onClick={() => navigate("/success")}
-          className={`${
-            cartItems.length > 0 ? "mb-[150px]" : "mb-0"
-          }  cursor-pointer text-[30px] px-[12px] py-[8px] bg-[#008751] hover:bg-[#008769] text-white rounded-[12px] font-medium`}
-        >
-          Place Order
-        </button>
+        <div className="text-right me-[40px] mb-[20px]">
+          <p className="text-[30px] font-bold">
+            Total Price: {`$${totalCartPrice.toFixed(2)}`}
+          </p>
+          <button
+            disabled={cartItems.length === 0}
+            onClick={() => navigate("/success")}
+            className={`cursor-pointer text-[30px] px-[12px] py-[8px] bg-[#008751] hover:bg-[#008769] text-white rounded-[12px] font-medium`}
+          >
+            Place Order
+          </button>
+        </div>
       </div>
     </>
   );
