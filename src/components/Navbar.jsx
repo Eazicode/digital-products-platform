@@ -1,6 +1,20 @@
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
+  const [TotalItems, setTotalItems] = useState(0);
+
+  const TotalCartItems = () => {
+    const cartItems = localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+
+    setTotalItems(cartItems.reduce((total, item) => total + item.quantity, 0));
+  };
+
+  useEffect(() => {
+    TotalCartItems();
+  }, []);
   return (
     <>
       <div className="flex justify-between p-5 bg-[#008751]">
@@ -18,7 +32,12 @@ const Navbar = () => {
           </li>
 
           <li className="hover:text-gray-400">
-            <Link to="/order">Check Cart </Link>
+            <Link to="/order">
+              <div className="flex flex-col items-center gap-2">
+                <p>Check cart</p>
+                <p>{TotalItems}</p>
+              </div>
+            </Link>
           </li>
         </ul>
       </div>

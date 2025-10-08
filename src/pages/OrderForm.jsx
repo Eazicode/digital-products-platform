@@ -41,13 +41,14 @@ const OrderForm = () => {
     <>
       <div className="min-h-screen">
         {cartItems.length === 0 ? (
-          <p className="text-[35px] flex justify-center mt-[100px]">
+          <p className="text-[35px] flex justify-center mt-[40px]">
             {`Your cart is empty (${totalCartItems})`}.
           </p>
         ) : (
           <div className="mt-[50px]">
             <p className="text-[25px] flex justify-center mt-[30px]">
-              {`Your cart is empty (${totalCartItems})`}.
+              {`Your have (${totalCartItems})`}{" "}
+              {`${totalCartItems === 1 ? "item" : "items"} in your cart`}.
             </p>
 
             {cartItems.map((item, i) => (
@@ -64,9 +65,7 @@ const OrderForm = () => {
                     <p>quantity: {item.quantity}</p>
 
                     <div className="flex items-center gap-5">
-                      <p className="text-[14px] font-medium ">{`$${
-                        item.quantity * item.price
-                      }.00`}</p>
+                      <p className="text-[14px] font-medium ">{`$${item.price}.00`}</p>
 
                       <div>
                         <button

@@ -11,16 +11,15 @@ const ProductDetails = () => {
   const navigate = useNavigate();
 
   const addToCart = () => {
-    const cart = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
+    const raw = localStorage.getItem("cart");
+    const cart = raw ? JSON.parse(raw) : [];
 
-    const existingItemIndex = cart.findIndex(
-      (item) => item.id === productToRender.id
-    );
-    if (existingItemIndex !== -1) {
-      cart[existingItemIndex].quantity =
-        (cart[existingItemIndex].quantity || 1) + 1;
+    alert(`${productToRender.name} has been added to your cart`);
+
+    const existingItem = cart.find((item) => item.id === productToRender.id);
+
+    if (existingItem) {
+      existingItem.quantity += 1;
     } else {
       cart.push({ ...productToRender, quantity: 1 });
     }
@@ -49,7 +48,8 @@ const ProductDetails = () => {
               <button
                 className="w-full py-[10px] font-medium cursor-pointer"
                 onClick={() => {
-                  addToCart(), navigate("/order");
+                  addToCart();
+                  navigate("/order");
                 }}
               >
                 Add to cart

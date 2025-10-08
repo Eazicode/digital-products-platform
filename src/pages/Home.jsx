@@ -13,9 +13,9 @@ const Home = () => {
             Elevate Your Projects
           </h1>
 
-          <p className="text-center text-[18px] mb-[20px]">
+          <p className="text-center text-[18px] mb-[20px] px-[15px]">
             Discover high-quality digital products, templates, and resources
-            crafted by <br /> professionals to accelerate your creative workflow
+            crafted by <br className="hidden md:block"/> professionals to accelerate your creative workflow
           </p>
         </div>
 
@@ -28,7 +28,7 @@ const Home = () => {
           </button>
         </div>
 
-        <div className="flex gap-[15px] justify-evenly mb-[60px] px-[10px]">
+        <div className="flex flex-wrap gap-[15px] justify-evenly mb-[60px] px-[10px]">
           <Card
             img="./cloud-lightning.svg"
             title="Instant Access"
@@ -51,8 +51,8 @@ const Home = () => {
           <p>Check out our most popular digital products</p>
         </div>
 
-        <div className="grid gap-[25px] [grid-template-columns:repeat(auto-fill,minmax(300px,1fr))] px-[15px]">
-          {products.slice(0, 4).map((product) => (
+        <div className="flex flex-col md:flex-row gap-[15px] px-[15px]">
+          {products.slice(0, 2).map((product) => (
             <Product key={product.id} product={product} />
           ))}
         </div>
